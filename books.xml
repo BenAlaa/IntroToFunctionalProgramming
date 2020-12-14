@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Library>
+    <Book>
+        <Author>Sam Newman</Author>
+        <Title>Building Microservices: Designing Fine-Grained Systems</Title>
+        <Year>2015</Year>
+        <Price>30.38</Price>
+    </Book>
+    <Book>
+        <Author>Federico Kereki</Author>
+        <Title>Mastering JavaScript Functional Programming: In-depth guide for writing robust and maintainable JavaScript code in ES8 and beyond</Title>
+        <Year>2017</Year>
+        <Price>22.39</Price>
+    </Book>
+    <Book>
+        <Author>Robert C. Martin </Author>
+        <Title>Clean Code: A Handbook of Agile Software Craftsmanship</Title>
+        <Year>2008</Year>
+        <Price>26.39</Price>
+    </Book>
+</Library>
