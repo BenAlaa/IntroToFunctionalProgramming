@@ -7,6 +7,7 @@ const addTiming = (fn, getTime = getCurrentTime, logFnTime = logTime) => (...arg
     const startTime = getTime();
     const returnedValue = fn(...args);
     logFnTime(fn.name, startTime, getTime());
+    return returnedValue;
 }
 
 const logTime = (fname, startTime, endTime) => {
@@ -20,38 +21,39 @@ let fib = n => {
 }
 
 const fibWithTiming = addTiming(fib);
-// fibWithTiming(10);
-// fibWithTiming(20);
-// fibWithTiming(30);
-// fibWithTiming(40);
-// fibWithTiming(50);
+// console.log(fibWithTiming(10))
+// console.log(fibWithTiming(20))
+// console.log(fibWithTiming(30))
+// console.log(fibWithTiming(40))
+// console.log(fibWithTiming(50))
 
 // using lodash to memo fib
 // fib = _.memoize(fib);
-// fibWithTiming(10);
-// fibWithTiming(20);
-// fibWithTiming(30);
-// fibWithTiming(40);
-// fibWithTiming(50);
+// console.log(fibWithTiming(10))
+// console.log(fibWithTiming(20))
+// console.log(fibWithTiming(30))
+// console.log(fibWithTiming(40))
+// console.log(fibWithTiming(50))
 
 
 
 
-// implementing memo function 
-const memo = (fn) => (...args) => {
+//implementing memo function 
+const memo = (fn) => {
     let memo = {};
-    return () => {
+    return (...args) => {
         if(args in memo) return memo[args];
         else return (memo[args] = fn(...args))
     }
 
 }
+
 fib = memo(fib);
-fibWithTiming(10);
-fibWithTiming(20);
-fibWithTiming(30);
-fibWithTiming(40);
-fibWithTiming(50);
+console.log(fibWithTiming(10))
+console.log(fibWithTiming(20))
+console.log(fibWithTiming(30))
+console.log(fibWithTiming(40))
+console.log(fibWithTiming(50))
 
 
 
